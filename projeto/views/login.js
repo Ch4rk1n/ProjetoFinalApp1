@@ -1,17 +1,20 @@
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
-export default function App() {
+export default function Login() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>     
      <StatusBar backgroundColor='#FFF' translucent={false}/>
 
     <Image
-      source={require('./src/assets/logo.png')}
+      source={require('../src/assets/logo.png')}
       style={styles.logo }  
     />
-    e
+    
     <TextInput
     placeholder='Username or Email'
     style={styles.input}
@@ -29,16 +32,16 @@ export default function App() {
       </TouchableOpacity>
 
     </View>
-
-      <TouchableOpacity style={styles.loginButton}>
+    <View>
+      <RectButton onPress={()=>{navigation.navigate('Homepage')}} style={styles.loginButton}>
         <Text style={styles.loginText}>Login</Text>
-      </TouchableOpacity>
+      </RectButton>
+    </View>
+      
     
     </View>
   );
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
