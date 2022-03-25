@@ -33,9 +33,9 @@ export default function Login() {
 
     </View>
     <View>
-      <RectButton onPress={()=>{navigation.navigate('Homepage')}} style={styles.loginButton}>
+      <TouchableOpacity onPress={()=>{navigation.navigate('Homepage')}} style={styles.loginButton}>
         <Text style={styles.loginText}>Login</Text>
-      </RectButton>
+      </TouchableOpacity>
     </View>
       
     

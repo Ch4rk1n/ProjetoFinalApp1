@@ -8,7 +8,7 @@
     "splash": {
       "image": "src/assets/skate.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#efe4b0"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
