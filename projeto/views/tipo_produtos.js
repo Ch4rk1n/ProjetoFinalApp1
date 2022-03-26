@@ -4,13 +4,14 @@ import { StyleSheet, Text, View,ScrollView,Image, TouchableOpacity } from 'react
 import {FontAwesome} from '@expo/vector-icons'
 
 export default function Tipo_produtos() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
     <StatusBar backgroundColor='#FFF' translucent={false}/>
 
       <View style={styles.textContainer}>
           <Text style={styles.text}>Produtos</Text>
-          <TouchableOpacity style={{position: 'absolute', right:0, alignSelf: 'center', marginLeft:'2%'}}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('Carrinho')}}  style={{position: 'absolute', right:0, alignSelf: 'center', marginLeft:'2%'}}>
             <FontAwesome
             name="cart-plus"
             size={40}
@@ -18,7 +19,7 @@ export default function Tipo_produtos() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={{alignItems:'center', alignSelf: 'center', width:150}}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('Homepage')}}  style={{alignItems:'center', alignSelf: 'center', width:150}}>
             <FontAwesome
             name="home"
             size={40}
@@ -31,7 +32,7 @@ export default function Tipo_produtos() {
 
         <View style={{flexDirection: 'row', justifyContent:'space-around'}}>
             <View style={{width:180, height:280, backgroundColor:'white', marginTop:40, borderRadius:10, borderWidth: 1}}>
-              <TouchableOpacity onPress={()=>{navigation.navigate('Tipo_produtos')}}>
+              <TouchableOpacity onPress={()=>{navigation.navigate('Produto')}}>
                 <Text style={styles.scrollText}>T-shirt Thrasher R$ 89,90</Text>
                 <Image source={require('../src/assets/camisetas.png')} 
                 style={styles.fotos}
