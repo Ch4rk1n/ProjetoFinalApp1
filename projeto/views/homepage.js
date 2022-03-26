@@ -11,7 +11,7 @@ export default function Homepage() {
 
         <View style={styles.textContainer}>
             <Text style={styles.text}>Produtos</Text>
-            <TouchableOpacity style={{position: 'absolute', right:0, alignSelf: 'center', marginLeft:'2%'}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('Carrinho')}}  style={{position: 'absolute', right:0, alignSelf: 'center', marginLeft:'2%'}}>
               <FontAwesome
               name="cart-plus"
               size={40}
@@ -19,7 +19,7 @@ export default function Homepage() {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity style={{alignItems:'center', alignSelf: 'center', width:150}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('Homepage')}} style={{alignItems:'center', alignSelf: 'center', width:150}}>
               <FontAwesome
               name="home"
               size={40}
