@@ -1,12 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,ScrollView,Image, TouchableOpacity } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons'
 
 export default function Homepage() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-    
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor='#FFF' translucent={false}/>
 
         <View style={styles.textContainer}>
             <Text style={styles.text}>Produtos</Text>
@@ -31,10 +32,13 @@ export default function Homepage() {
 
           <View style={{flexDirection: 'row', justifyContent:'space-around'}}>
               <View style={{width:150, height:150, backgroundColor:'white', marginTop:40, borderRadius:10, borderWidth: 1}}>
-                <Text style={styles.scrollText}>Camisetas</Text>
-                <Image source={require('../src/assets/camisetas.png')} 
+                <TouchableOpacity onPress={()=>{navigation.navigate('Tipo_produtos')}}>
+                  <Text style={styles.scrollText}>Camisetas</Text>
+                  <Image source={require('../src/assets/camisetas.png')} 
                   style={styles.fotos}
                   />
+                </TouchableOpacity>
+                
               </View>
 
               <View style={{width:150, height:150, backgroundColor:'white', marginTop:40,borderRadius:10, borderWidth: 1}}>
