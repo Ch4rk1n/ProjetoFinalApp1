@@ -5,6 +5,7 @@ import {FontAwesome} from '@expo/vector-icons'
 
 
 export default function Produto() {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
     <StatusBar backgroundColor='#FFF' translucent={false}/>
